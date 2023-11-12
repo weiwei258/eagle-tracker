@@ -70,12 +70,19 @@ export default class Config {
     }
     const reg = /^https?:\/\/(([a-zA-Z0-9_-])+(\.)?)*(:\d+)?(\/((\.)?(\?)?=?&?[a-zA-Z0-9_-](\?)?)*)*$/i;
 
+<<<<<<< HEAD
     if (this.config.sendMode === 'img' && this.config.dsn) {
       if (!this.config.dsn) {
         message.push('sendMode ===img 时 dsn属性必填');
       }
+=======
+    if (!this.config.sendMode) {
+      message.push('sendMode 为必填');
+    }
+    if (this.config.dsn) {
+>>>>>>> a1bdd287ce30df2d0be67ac1eb62fcfb3a62f46d
       if (!reg.test(this.config.dsn)) {
-        message.push('dsn上报地址格式不正确');
+        message.push('dsn格式不正确');
       }
     } else if (this.config.sendMode === 'post' && this.config.postUrl) {
       if (!this.config.postUrl) {
@@ -85,7 +92,11 @@ export default class Config {
         message.push('post 请求上报地址格式不正确');
       }
     } else {
+<<<<<<< HEAD
       message.push('sendMode 为必填');
+=======
+      message.push('dsn为必填项');
+>>>>>>> a1bdd287ce30df2d0be67ac1eb62fcfb3a62f46d
     }
 
     if (message.length > 0) {

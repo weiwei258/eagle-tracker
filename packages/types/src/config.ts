@@ -32,6 +32,17 @@ export interface IBaseGlobalConfig {
    * 是否为测试数据, 默认为boolean(测试模式下打点数据仅供浏览, 不会展示在系统中)
    */
   isTest: boolean;
+<<<<<<< HEAD
+=======
+  /**
+   * 数据上报方式
+   */
+  sendMode: 'img' | 'post';
+  /**
+     * 数据上报地址
+     */
+  dsn: string;
+>>>>>>> a1bdd287ce30df2d0be67ac1eb62fcfb3a62f46d
   record: {
     timeOnPage: boolean; // 是否监控用户在线时长数据, 默认为boolean
     performance: {
