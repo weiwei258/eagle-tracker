@@ -104,16 +104,6 @@ export default class Transport {
     const sendMode = this.host.configInstance.get('sendMode');
     const appId = this.host.configInstance.get('appId');
     const appKey = this.host.configInstance.get('appKey');
-<<<<<<< HEAD
-
-    if (sendMode === 'img') {
-      const dsn:string = this.host.configInstance.get('dsn');
-      const img = new Image();
-      img.src = `${dsn}?data=${encodeURIComponent(transportStr)}`;
-    } else {
-      const postUrl:string = this.host.configInstance.get('postUrl');
-      axios.post(postUrl, { data: transportStr, appId, appKey });
-=======
     const dsn: string = this.host.configInstance.get('dsn');
 
     if (sendMode === 'img') {
@@ -122,7 +112,6 @@ export default class Transport {
     }
     if (sendMode === 'post') {
       navigator.sendBeacon(dsn, JSON.stringify({ data: transportStr, appId, appKey }));
->>>>>>> a1bdd287ce30df2d0be67ac1eb62fcfb3a62f46d
     }
   }
 }
